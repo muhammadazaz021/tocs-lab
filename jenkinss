@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // This stage checks out your code from GitHub
+                git 'https://github.com/muhammadazaz021/tocs-lab.git'
+            }
+        }
+        stage('Execute Script') {
+            steps {
+                // This stage executes your Python script
+                sh 'python fib.py'
+            }
+        }
+    }
+}
